@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.13'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
+}
+
+group 'com.gnegdev'
+version '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = '19'
+targetCompatibility = '19'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+application {
+    mainModule = 'com.gnegdev.gcontacts'
+    mainClass = 'com.gnegdev.gcontacts.Launcher'
+}
+
+javafx {
+    version = '19.0.2'
+    modules = ['javafx.controls', 'javafx.fxml']
+}
